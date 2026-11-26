@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Minhas raízes na Zona Leste, as lembranças de infância na Penha e o que me move hoje.">
+  <meta name="theme-color" content="#141411">
+  <title>De onde eu vim | Minha história</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./assets/jquery.min.js"></script>
+  <script defer src="./script.js"></script>
+</head>
+<body id="inicio">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">×</span> Minha história</a>
+      <nav aria-label="Navegação principal">
+        <a href="#raizes">Raízes</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#esportes-na-pratica">Esportes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="titulo">
+      <div class="wrap hero-inner">
+        <div>
+          <h1 id="titulo"><span>De onde</span> <span>eu vim.</span></h1>
+          <p class="intro">Minha história começa na Zona Leste. Hoje, gosto de jogar, testar ideias e correr atrás daquilo que desperta a minha curiosidade.</p>
+          <a class="hero-link" href="#raizes">Conheça minha história</a>
+        </div>
+
+        <figure class="portrait">
+          <button class="photo-swap" type="button" aria-label="Alternar entre o retrato de infância e o segundo retrato" aria-pressed="false">
+            <span class="photo-window">
+              <img class="photo-child" alt="Meu retrato de infância, sorrindo com uma jaqueta verde" src="./assets/infancia.webp">
+              <img class="photo-recent" alt="" src="./assets/segundo-retrato.webp">
+            </span>
+            <span class="caption">
+              <span class="caption-label" aria-hidden="true">Infância</span>
+              <span class="caption-hint" aria-hidden="true"><span class="hint-mouse">Passe o mouse na foto</span><span class="hint-touch">Toque para trocar</span></span>
+            </span>
+          </button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="roots" id="raizes" aria-labelledby="raizes-titulo">
+      <div class="wrap roots-inner">
+        <div>
+          <p class="section-label">Minhas raízes</p>
+          <h2 id="raizes-titulo">Da Penha, <em>Zona Leste.</em></h2>
+        </div>
+        <div class="roots-story">
+          <p>Nasci na Zona Leste e, quando era criança, morava na Penha. Muitas das minhas experiências de infância aconteceram perto da <strong>Praça da Toco</strong> e nos arredores.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="wrap about-inner">
+        <div>
+          <h2 id="sobre-titulo"><span>O que</span> <span>me move.</span></h2>
+          <p class="about-lead">Se alguma coisa me deixa curioso, eu quero entender como funciona e descobrir o que posso fazer com ela.</p>
+        </div>
+        <div class="chapters">
+          <div class="tabs" role="tablist" aria-label="Sobre mim" hidden>
+            <button id="tab-esportes" type="button" role="tab" aria-controls="esportes" aria-selected="true">Esportes</button>
+            <button id="tab-interesses" type="button" role="tab" aria-controls="interesses" aria-selected="false" tabindex="-1">Interesses</button>
+            <button id="tab-foco" type="button" role="tab" aria-controls="foco" aria-selected="false" tabindex="-1">Meu jeito</button>
+            <button id="tab-futuro" type="button" role="tab" aria-controls="futuro" aria-selected="false" tabindex="-1">Futuro</button>
+          </div>
+          <article class="chapter" id="esportes" aria-labelledby="esportes-titulo">
+            <h3 id="esportes-titulo">Na quadra e no campo</h3>
+            <p>Basquete e futebol estão entre os esportes que eu mais gosto de praticar. Curto o desafio de competir e a chance de melhorar um pouco a cada jogo.</p>
+            <p>Também gosto de como a partida muda de um lance para o outro. Dá para jogar várias vezes e sempre encontrar alguma coisa para fazer melhor.</p>
+            <a class="chapter-link" href="#esportes-na-pratica">Mais sobre basquete e futebol</a>
+          </article>
+          <article class="chapter" id="interesses" aria-labelledby="interesses-titulo">
+            <h3 id="interesses-titulo">O que desperta a minha curiosidade</h3>
+            <p>Gosto de tecnologia e programação porque posso pegar uma ideia, experimentar e ver o que funciona. Quando descubro que existe outro jeito de resolver a mesma coisa, fico com vontade de testar também.</p>
+            <p>No meu tempo livre, eu curto música, jogos e estar com meus amigos. Gosto de ter tempo para me divertir com as pessoas de quem eu gosto.</p>
+          </article>
+          <article class="chapter" id="foco" aria-labelledby="foco-titulo">
+            <h3 id="foco-titulo">Quando eu gosto de algo, eu vou atrás</h3>
+            <p>Quando eu gosto de algo ou uma ideia me anima, eu foco e corro atrás. Gosto de desafios que me deixam usar a criatividade, competir ou perceber que melhorei em alguma coisa.</p>
+            <p>Aprendo mais quando coloco a mão na massa. Se alguma coisa dá errado, tento entender o que aconteceu, mudar minha abordagem e testar de novo.</p>
+          </article>
+          <article class="chapter" id="futuro" aria-labelledby="futuro-titulo">
+            <h3 id="futuro-titulo">Ainda tenho muito para descobrir</h3>
+            <p>Ainda estou descobrindo o que combina comigo e o que quero para o futuro. Experimentar coisas diferentes me ajuda a perceber quais interesses eu quero levar adiante.</p>
+            <p>Quero continuar aprendendo com o que acontece no caminho e evoluir tanto nos estudos quanto na vida pessoal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="sports" id="esportes-na-pratica" aria-labelledby="esportes-na-pratica-titulo">
+      <div class="wrap">
+        <h2 id="esportes-na-pratica-titulo">Da quadra ao campo.</h2>
+        <div class="sport-grid">
+          <article class="sport-card sport-basket">
+            <div class="sport-art basket-court" aria-hidden="true"><span></span></div>
+            <div class="sport-copy">
+              <h3>Basquete</h3>
+              <p>Na quadra, cada posse pede uma decisão rápida. Tem hora de passar, de buscar espaço e de tentar a cesta. É esse ritmo que torna o jogo um desafio a cada lance.</p>
+            </div>
+          </article>
+          <article class="sport-card sport-soccer">
+            <div class="sport-art soccer-pitch" aria-hidden="true"><span></span></div>
+            <div class="sport-copy">
+              <h3>Futebol</h3>
+              <p>No campo, a jogada começa bem antes do chute. Se movimentar, olhar onde os outros estão e achar um passe são partes do jogo que dão sentido a cada lance.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Minha história</p>
+      <a href="#inicio">Voltar ao início</a>
+    </div>
+  </footer>
+
+</body>
+</html>

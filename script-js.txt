@@ -1,0 +1,68 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = window.jQuery;
+  const $portrait = $(".photo-swap");
+  const hover = window.matchMedia("(hover: hover)");
+  let showRecent = false;
+  let mouseOver = false;
+
+  function updatePhoto() {
+    const recent = mouseOver || showRecent;
+    $portrait.toggleClass("is-recent", recent).attr("aria-pressed", recent);
+    $portrait.find(".caption-label").text(recent ? "Segundo retrato" : "Infância");
+  }
+
+  $portrait.on("pointerenter pointerleave", (event) => {
+    if (hover.matches && event.originalEvent.pointerType === "mouse") {
+      mouseOver = event.type === "pointerenter";
+      updatePhoto();
+    }
+  });
+
+  $portrait.on("click", (event) => {
+    if (event.originalEvent.detail === 0 || !mouseOver) {
+      showRecent = !showRecent;
+      if (event.originalEvent.detail === 0) mouseOver = false;
+      updatePhoto();
+    }
+  });
+
+  const $tabs = $(".tabs [role='tab']");
+  const $chapters = $(".chapter");
+
+  function selectChapter(index, focus = false) {
+    const $activeTab = $tabs.eq(index);
+    $tabs.attr({ "aria-selected": "false", tabindex: "-1" });
+    $activeTab.attr({ "aria-selected": "true", tabindex: "0" });
+    $chapters.prop("hidden", true);
+    document.getElementById($activeTab.attr("aria-controls")).hidden = false;
+
+    if (focus) $activeTab.trigger("focus");
+  }
+
+  $tabs.on("click", function () {
+    selectChapter($tabs.index(this));
+  });
+
+  $tabs.on("keydown", function (event) {
+    const current = $tabs.index(this);
+    const targets = {
+      ArrowLeft: (current + $tabs.length - 1) % $tabs.length,
+      ArrowRight: (current + 1) % $tabs.length,
+      Home: 0,
+      End: $tabs.length - 1
+    };
+
+    if (!Object.hasOwn(targets, event.key)) return;
+    event.preventDefault();
+    selectChapter(targets[event.key], true);
+  });
+
+  $tabs.each(function () {
+    document.getElementById(this.getAttribute("aria-controls"))
+      .setAttribute("role", "tabpanel");
+  });
+
+  selectChapter(0);
+  $(".chapters").addClass("enhanced");
+  $(".tabs").prop("hidden", false);
+});
